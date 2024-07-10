@@ -43,6 +43,11 @@ async function postToArticle(ctx: RequestContext<ContextData>, post: any) {
 export async function followAction(
     ctx: Context<{ Variables: HonoContextVariables }>,
 ) {
+    if (ctx.get('role') !== 'Owner') {
+        return new Response(null, {
+            status: 403
+        });
+    }
     const handle = ctx.req.param('handle');
     const actorToFollow = await lookupObject(handle);
     if (!isActor(actorToFollow)) {
