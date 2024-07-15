@@ -210,6 +210,12 @@ app.use(async (ctx, next) => {
 
 /** Custom API routes */
 
+app.get('/ping', (ctx) => {
+    return new Response('', {
+        status: 200
+    });
+});
+
 app.get('/.ghost/activitypub/inbox/:handle', inboxHandler);
 app.post('/.ghost/activitypub/webhooks/post/published', postPublishedWebhook);
 app.post('/.ghost/activitypub/actions/follow/:handle', followAction);
