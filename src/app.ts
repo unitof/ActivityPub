@@ -74,7 +74,7 @@ export const db = await KnexKvStore.create(client, 'key_value');
 
 fedify
     .setActorDispatcher('/.ghost/activitypub/users/{handle}', actorDispatcher)
-    .setKeyPairsDispatcher(keypairDispatcher);
+    .setKeyPairDispatcher(keypairDispatcher);
 
 const inboxListener = fedify.setInboxListeners(
     '/.ghost/activitypub/inbox/{handle}',

@@ -130,13 +130,13 @@ export async function actorDispatcher(
 }
 
 export async function keypairDispatcher(ctx: ContextData, handle: string) {
-    if (handle !== 'index') return [];
+    if (handle !== 'index') return null;
 
     const data = await getUserKeypair(ctx, handle);
 
-    if (!data) return [];
+    if (!data) return null;
 
-    return [data];
+    return data;
 }
 
 export async function handleFollow(
