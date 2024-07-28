@@ -15,7 +15,7 @@ import {
     Service,
 } from '@fedify/fedify';
 import { federation } from '@fedify/fedify/x/hono';
-import { Hono, Context } from 'hono';
+import { Hono, Context, Next } from 'hono';
 import { cors } from 'hono/cors';
 import { configure, getConsoleSink } from '@logtape/logtape';
 import * as Sentry from '@sentry/node';

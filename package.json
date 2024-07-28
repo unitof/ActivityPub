@@ -8,6 +8,7 @@
   "type": "module",
   "scripts": {
     "dev": "docker compose up",
+    "dev:record": "docker compose --env-file record.env up",
     "test:types": "tsc --noEmit",
     "test:unit": "c8 --src src --all --reporter text --reporter cobertura mocha -r tsx './src/**/*.unit.test.ts'",
     "test:integration": "c8 --src src --all --reporter text --reporter cobertura mocha -r tsx './src/**/*.integration.test.ts'",
