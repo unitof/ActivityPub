@@ -10,6 +10,7 @@ services:
       - MYSQL_HOST=mysql
       - MYSQL_PORT=3306
       - MYSQL_DATABASE=activitypub
+      - RECORD_INBOX_REQUESTS=${RECORD_INBOX_REQUESTS:-false}
     command: node --import tsx --watch src/main.ts
     depends_on:
       mysql:

@@ -208,7 +208,7 @@ app.use(async (ctx, next) => {
     await next();
 });
 
-if (process.env.RECORD_INBOX_REQUESTS) {
+if (process.env.RECORD_INBOX_REQUESTS === 'true') {
     const filePath = path.join(import.meta.dirname, '../', 'inbox-requests.json');
     console.log(`Recording to ${filePath}`);
     const requestRecorder = await RequestRecorder.create(filePath);
