@@ -3,6 +3,7 @@ services:
     build: .
     volumes:
       - ./src:/opt/activitypub/src
+      - ./inbox-requests.json:/opt/activitypub/inbox-requests.json
     environment:
       - PORT=8080
       - MYSQL_USER=ghost

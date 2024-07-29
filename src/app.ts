@@ -66,6 +66,9 @@ const fedifyKv = await KnexKvStore.create(client, 'key_value');
 export const fedify = new Federation<ContextData>({
     kv: fedifyKv,
     treatHttps: true,
+    signatureTimeWindow: {
+        days: 10000
+    }
 });
 
 export const db = await KnexKvStore.create(client, 'key_value');
